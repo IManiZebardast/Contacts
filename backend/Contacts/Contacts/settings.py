@@ -26,10 +26,7 @@ SECRET_KEY = "django-insecure-a4kg1*gsi5el5v_w-z)qrrb+_1^%2thmxh+%)n=mzdcq1h-(&1
 DEBUG = True
 
 ALLOWED_HOSTS = []
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # React development server
-    'http://127.0.0.1:3000',
-]
+
 
 
 # Application definition
@@ -43,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'Contact',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +52,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'corsheaders.middleware.CorsMiddleware',
+]
+CORS_ALLOWED_ORIGINS = [
+   "http://localhost:5173", # React development server
 ]
 
 ROOT_URLCONF = "Contacts.urls"
